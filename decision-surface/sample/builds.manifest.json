@@ -1,0 +1,749 @@
+{
+  "fixture": "ground-truth",
+  "as_of": "2026-06-01",
+  "run_with": [
+    "--as-of",
+    "2026-06-01",
+    "--u",
+    "1000.0"
+  ],
+  "pinned_u": 1000.0,
+  "u_note": "usage sits in two clusters, 5-40 and 5000-200000, with u pinned at 1000 between them; 0.5u and 2u stay inside the empty band, so the impact mix is exactly the planted one at all three levels",
+  "geometry": "DTLZ2 concave sphere octant. Two cells on one direction are always comparable (smaller radius dominates); two cells at radius 1.0 on different directions are never comparable.",
+  "objective_map": {
+    "cost": "150.0 + 900.0 * f1",
+    "lead_time": "1.5 + 22.0 * f2",
+    "debt_defect": "0.15 + 5.0 * f3 (bugs per KLOC)"
+  },
+  "planted": {
+    "front_latest_window": [
+      "agent-heavy/2026-04",
+      "platform-core/2026-04",
+      "review-first/2026-04"
+    ],
+    "dominated_latest_window": [
+      "contractors/2026-04",
+      "legacy-owner/2026-04"
+    ],
+    "dominated_per_window": {
+      "2025-11": [
+        "agent-heavy/2025-11",
+        "contractors/2025-11"
+      ],
+      "2025-12": [
+        "agent-heavy/2025-12",
+        "contractors/2025-12"
+      ],
+      "2026-01": [
+        "agent-heavy/2026-01",
+        "contractors/2026-01"
+      ],
+      "2026-02": [
+        "contractors/2026-02",
+        "legacy-owner/2026-02"
+      ],
+      "2026-03": [
+        "contractors/2026-03",
+        "legacy-owner/2026-03"
+      ],
+      "2026-04": [
+        "contractors/2026-04",
+        "legacy-owner/2026-04"
+      ]
+    },
+    "within_group_front": {
+      "agent-heavy": [
+        "agent-heavy/2026-04"
+      ],
+      "legacy-owner": [
+        "legacy-owner/2025-11"
+      ],
+      "review-first": [
+        "review-first/2025-11",
+        "review-first/2025-12",
+        "review-first/2026-01",
+        "review-first/2026-02",
+        "review-first/2026-03",
+        "review-first/2026-04"
+      ],
+      "contractors": [
+        "contractors/2025-11",
+        "contractors/2025-12",
+        "contractors/2026-01",
+        "contractors/2026-02",
+        "contractors/2026-03",
+        "contractors/2026-04"
+      ]
+    },
+    "travel": {
+      "agent-heavy": "small angle: improving on all three together",
+      "legacy-owner": "large angle: worsening on all three together",
+      "review-first": "mid angle: moving along the front, trading debt against lead time",
+      "platform-core": "near-zero magnitude: parked"
+    }
+  },
+  "cells": [
+    {
+      "group": "agent-heavy",
+      "window": "2025-11",
+      "n_builds": 18,
+      "radius": 1.9,
+      "f_scaled": [
+        1.5215927188063108,
+        0.9328964284014174,
+        0.6515058341653576
+      ],
+      "cost": 1519.4334469256796,
+      "lead_time": 22.023721424831184,
+      "defect_density": 3.4075291708267876,
+      "impact_mix": {
+        "impactful": 0.32,
+        "low_impact": 0.28,
+        "liability": 0.1,
+        "carried": 0.15,
+        "sunk": 0.15,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "agent-heavy",
+      "window": "2025-12",
+      "n_builds": 19,
+      "radius": 1.72,
+      "f_scaled": [
+        1.3774418296562392,
+        0.8445167667633884,
+        0.5897842288233763
+      ],
+      "cost": 1389.6976466906153,
+      "lead_time": 20.079368868794546,
+      "defect_density": 3.0989211441168814,
+      "impact_mix": {
+        "impactful": 0.33,
+        "low_impact": 0.28,
+        "liability": 0.09000000000000001,
+        "carried": 0.15,
+        "sunk": 0.15,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "agent-heavy",
+      "window": "2026-01",
+      "n_builds": 20,
+      "radius": 1.54,
+      "f_scaled": [
+        1.2332909405061676,
+        0.7561371051253594,
+        0.5280626234813951
+      ],
+      "cost": 1259.9618464555508,
+      "lead_time": 18.135016312757905,
+      "defect_density": 2.7903131174069755,
+      "impact_mix": {
+        "impactful": 0.34,
+        "low_impact": 0.28,
+        "liability": 0.08,
+        "carried": 0.15,
+        "sunk": 0.15,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "agent-heavy",
+      "window": "2026-02",
+      "n_builds": 18,
+      "radius": 1.3599999999999999,
+      "f_scaled": [
+        1.089140051356096,
+        0.6677574434873302,
+        0.4663410181394138
+      ],
+      "cost": 1130.2260462204863,
+      "lead_time": 16.190663756721264,
+      "defect_density": 2.481705090697069,
+      "impact_mix": {
+        "impactful": 0.35,
+        "low_impact": 0.28,
+        "liability": 0.07,
+        "carried": 0.15,
+        "sunk": 0.15,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "agent-heavy",
+      "window": "2026-03",
+      "n_builds": 19,
+      "radius": 1.18,
+      "f_scaled": [
+        0.9449891622060245,
+        0.5793777818493013,
+        0.4046194127974326
+      ],
+      "cost": 1000.490245985422,
+      "lead_time": 14.24631120068463,
+      "defect_density": 2.173097063987163,
+      "impact_mix": {
+        "impactful": 0.36,
+        "low_impact": 0.28,
+        "liability": 0.060000000000000005,
+        "carried": 0.15,
+        "sunk": 0.15,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "agent-heavy",
+      "window": "2026-04",
+      "n_builds": 20,
+      "radius": 1.0,
+      "f_scaled": [
+        0.800838273055953,
+        0.4909981202112723,
+        0.34289780745545134
+      ],
+      "cost": 870.7544457503577,
+      "lead_time": 12.301958644647991,
+      "defect_density": 1.8644890372772567,
+      "impact_mix": {
+        "impactful": 0.37,
+        "low_impact": 0.28,
+        "liability": 0.05,
+        "carried": 0.15,
+        "sunk": 0.15,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "legacy-owner",
+      "window": "2025-11",
+      "n_builds": 12,
+      "radius": 1.1,
+      "f_scaled": [
+        0.8809221003615484,
+        0.5400979322323995,
+        0.3771875882009965
+      ],
+      "cost": 942.8298903253935,
+      "lead_time": 13.382154509112791,
+      "defect_density": 2.0359379410049825,
+      "impact_mix": {
+        "impactful": 0.26,
+        "low_impact": 0.26,
+        "liability": 0.16,
+        "carried": 0.14,
+        "sunk": 0.18,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "legacy-owner",
+      "window": "2025-12",
+      "n_builds": 13,
+      "radius": 1.26,
+      "f_scaled": [
+        1.0090562240505008,
+        0.6186576314662031,
+        0.4320512373938687
+      ],
+      "cost": 1058.1506016454507,
+      "lead_time": 15.11046789225647,
+      "defect_density": 2.3102561869693434,
+      "impact_mix": {
+        "impactful": 0.27,
+        "low_impact": 0.26,
+        "liability": 0.15,
+        "carried": 0.14,
+        "sunk": 0.18,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "legacy-owner",
+      "window": "2026-01",
+      "n_builds": 14,
+      "radius": 1.42,
+      "f_scaled": [
+        1.1371903477394532,
+        0.6972173307000067,
+        0.48691488658674087
+      ],
+      "cost": 1173.4713129655079,
+      "lead_time": 16.838781275400148,
+      "defect_density": 2.5845744329337044,
+      "impact_mix": {
+        "impactful": 0.28,
+        "low_impact": 0.26,
+        "liability": 0.14,
+        "carried": 0.14,
+        "sunk": 0.18,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "legacy-owner",
+      "window": "2026-02",
+      "n_builds": 12,
+      "radius": 1.58,
+      "f_scaled": [
+        1.2653244714284058,
+        0.7757770299338103,
+        0.5417785357796131
+      ],
+      "cost": 1288.7920242855653,
+      "lead_time": 18.567094658543827,
+      "defect_density": 2.8588926788980653,
+      "impact_mix": {
+        "impactful": 0.29000000000000004,
+        "low_impact": 0.26,
+        "liability": 0.13,
+        "carried": 0.14,
+        "sunk": 0.18,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "legacy-owner",
+      "window": "2026-03",
+      "n_builds": 13,
+      "radius": 1.74,
+      "f_scaled": [
+        1.3934585951173581,
+        0.8543367291676138,
+        0.5966421849724853
+      ],
+      "cost": 1404.1127356056222,
+      "lead_time": 20.295408041687505,
+      "defect_density": 3.1332109248624267,
+      "impact_mix": {
+        "impactful": 0.3,
+        "low_impact": 0.26,
+        "liability": 0.12,
+        "carried": 0.14,
+        "sunk": 0.18,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "legacy-owner",
+      "window": "2026-04",
+      "n_builds": 14,
+      "radius": 1.9,
+      "f_scaled": [
+        1.5215927188063108,
+        0.9328964284014174,
+        0.6515058341653576
+      ],
+      "cost": 1519.4334469256796,
+      "lead_time": 22.023721424831184,
+      "defect_density": 3.4075291708267876,
+      "impact_mix": {
+        "impactful": 0.31,
+        "low_impact": 0.26,
+        "liability": 0.11,
+        "carried": 0.14,
+        "sunk": 0.18,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "review-first",
+      "window": "2025-11",
+      "n_builds": 15,
+      "radius": 1.0,
+      "f_scaled": [
+        0.5464172217671329,
+        0.19945785601107882,
+        0.8134155047893737
+      ],
+      "cost": 641.7754995904197,
+      "lead_time": 5.888072832243734,
+      "defect_density": 4.217077523946869,
+      "impact_mix": {
+        "impactful": 0.34,
+        "low_impact": 0.3,
+        "liability": 0.08,
+        "carried": 0.16,
+        "sunk": 0.12,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "review-first",
+      "window": "2025-12",
+      "n_builds": 16,
+      "radius": 1.0,
+      "f_scaled": [
+        0.6129030076599158,
+        0.24480125827631463,
+        0.7512804051402927
+      ],
+      "cost": 701.6127068939242,
+      "lead_time": 6.885627682078922,
+      "defect_density": 3.9064020257014636,
+      "impact_mix": {
+        "impactful": 0.35000000000000003,
+        "low_impact": 0.3,
+        "liability": 0.07,
+        "carried": 0.16,
+        "sunk": 0.12,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "review-first",
+      "window": "2026-01",
+      "n_builds": 17,
+      "radius": 1.0,
+      "f_scaled": [
+        0.6710470974673097,
+        0.2916580083154763,
+        0.6816387600233341
+      ],
+      "cost": 753.9423877205787,
+      "lead_time": 7.916476182940478,
+      "defect_density": 3.5581938001166704,
+      "impact_mix": {
+        "impactful": 0.36000000000000004,
+        "low_impact": 0.3,
+        "liability": 0.06,
+        "carried": 0.16,
+        "sunk": 0.12,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "review-first",
+      "window": "2026-02",
+      "n_builds": 15,
+      "radius": 1.0,
+      "f_scaled": [
+        0.7202581407997246,
+        0.3390835073016938,
+        0.6051864057360395
+      ],
+      "cost": 798.2323267197521,
+      "lead_time": 8.959837160637264,
+      "defect_density": 3.1759320286801977,
+      "impact_mix": {
+        "impactful": 0.37,
+        "low_impact": 0.3,
+        "liability": 0.05,
+        "carried": 0.16,
+        "sunk": 0.12,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "review-first",
+      "window": "2026-03",
+      "n_builds": 16,
+      "radius": 1.0,
+      "f_scaled": [
+        0.7600838287771345,
+        0.3860966639900951,
+        0.5226872289306591
+      ],
+      "cost": 834.0754458994211,
+      "lead_time": 9.994126607782093,
+      "defect_density": 2.7634361446532956,
+      "impact_mix": {
+        "impactful": 0.38,
+        "low_impact": 0.3,
+        "liability": 0.04,
+        "carried": 0.16,
+        "sunk": 0.12,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "review-first",
+      "window": "2026-04",
+      "n_builds": 17,
+      "radius": 1.0,
+      "f_scaled": [
+        0.7902166749294249,
+        0.4316973370300261,
+        0.4349655341112302
+      ],
+      "cost": 861.1950074364825,
+      "lead_time": 10.997341414660575,
+      "defect_density": 2.3248276705561506,
+      "impact_mix": {
+        "impactful": 0.39,
+        "low_impact": 0.3,
+        "liability": 0.03,
+        "carried": 0.16,
+        "sunk": 0.12,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "contractors",
+      "window": "2025-11",
+      "n_builds": 13,
+      "radius": 1.35,
+      "f_scaled": [
+        0.7376632493856294,
+        0.2692681056149564,
+        1.0981109314656545
+      ],
+      "cost": 813.8969244470665,
+      "lead_time": 7.423898323529041,
+      "defect_density": 5.640554657328273,
+      "impact_mix": {
+        "impactful": 0.28,
+        "low_impact": 0.26,
+        "liability": 0.14,
+        "carried": 0.16,
+        "sunk": 0.16,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "contractors",
+      "window": "2025-12",
+      "n_builds": 14,
+      "radius": 1.35,
+      "f_scaled": [
+        0.8274190603408864,
+        0.3304816986730248,
+        1.0142285469393952
+      ],
+      "cost": 894.6771543067978,
+      "lead_time": 8.770597370806545,
+      "defect_density": 5.2211427346969765,
+      "impact_mix": {
+        "impactful": 0.29000000000000004,
+        "low_impact": 0.26,
+        "liability": 0.13,
+        "carried": 0.16,
+        "sunk": 0.16,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "contractors",
+      "window": "2026-01",
+      "n_builds": 15,
+      "radius": 1.35,
+      "f_scaled": [
+        0.9059135815808682,
+        0.393738311225893,
+        0.9202123260315012
+      ],
+      "cost": 965.3222234227813,
+      "lead_time": 10.162242846969646,
+      "defect_density": 4.751061630157507,
+      "impact_mix": {
+        "impactful": 0.30000000000000004,
+        "low_impact": 0.26,
+        "liability": 0.12000000000000001,
+        "carried": 0.16,
+        "sunk": 0.16,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "contractors",
+      "window": "2026-02",
+      "n_builds": 13,
+      "radius": 1.35,
+      "f_scaled": [
+        0.9723484900796283,
+        0.45776273485728664,
+        0.8170016477436535
+      ],
+      "cost": 1025.1136410716654,
+      "lead_time": 11.570780166860306,
+      "defect_density": 4.235008238718268,
+      "impact_mix": {
+        "impactful": 0.31000000000000005,
+        "low_impact": 0.26,
+        "liability": 0.11000000000000001,
+        "carried": 0.16,
+        "sunk": 0.16,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "contractors",
+      "window": "2026-03",
+      "n_builds": 14,
+      "radius": 1.35,
+      "f_scaled": [
+        1.0261131688491316,
+        0.5212304963866284,
+        0.7056277590563899
+      ],
+      "cost": 1073.5018519642185,
+      "lead_time": 12.967070920505826,
+      "defect_density": 3.6781387952819493,
+      "impact_mix": {
+        "impactful": 0.32,
+        "low_impact": 0.26,
+        "liability": 0.1,
+        "carried": 0.16,
+        "sunk": 0.16,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "contractors",
+      "window": "2026-04",
+      "n_builds": 15,
+      "radius": 1.35,
+      "f_scaled": [
+        1.0667925111547236,
+        0.5827914049905353,
+        0.5872034710501608
+      ],
+      "cost": 1110.1132600392511,
+      "lead_time": 14.321410909791776,
+      "defect_density": 3.086017355250804,
+      "impact_mix": {
+        "impactful": 0.33,
+        "low_impact": 0.26,
+        "liability": 0.09000000000000001,
+        "carried": 0.16,
+        "sunk": 0.16,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "platform-core",
+      "window": "2025-11",
+      "n_builds": 16,
+      "radius": 1.0,
+      "f_scaled": [
+        0.33245912795282606,
+        0.7428789069964461,
+        0.5810351605373051
+      ],
+      "cost": 449.21321515754346,
+      "lead_time": 17.843335953921816,
+      "defect_density": 3.0551758026865254,
+      "impact_mix": {
+        "impactful": 0.3,
+        "low_impact": 0.3,
+        "liability": 0.1,
+        "carried": 0.15,
+        "sunk": 0.15,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "platform-core",
+      "window": "2025-12",
+      "n_builds": 17,
+      "radius": 1.0,
+      "f_scaled": [
+        0.33245912795282606,
+        0.7428789069964461,
+        0.5810351605373051
+      ],
+      "cost": 449.21321515754346,
+      "lead_time": 17.843335953921816,
+      "defect_density": 3.0551758026865254,
+      "impact_mix": {
+        "impactful": 0.31,
+        "low_impact": 0.3,
+        "liability": 0.09000000000000001,
+        "carried": 0.15,
+        "sunk": 0.15,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "platform-core",
+      "window": "2026-01",
+      "n_builds": 18,
+      "radius": 1.0,
+      "f_scaled": [
+        0.33245912795282606,
+        0.7428789069964461,
+        0.5810351605373051
+      ],
+      "cost": 449.21321515754346,
+      "lead_time": 17.843335953921816,
+      "defect_density": 3.0551758026865254,
+      "impact_mix": {
+        "impactful": 0.32,
+        "low_impact": 0.3,
+        "liability": 0.08,
+        "carried": 0.15,
+        "sunk": 0.15,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "platform-core",
+      "window": "2026-02",
+      "n_builds": 16,
+      "radius": 1.0,
+      "f_scaled": [
+        0.33245912795282606,
+        0.7428789069964461,
+        0.5810351605373051
+      ],
+      "cost": 449.21321515754346,
+      "lead_time": 17.843335953921816,
+      "defect_density": 3.0551758026865254,
+      "impact_mix": {
+        "impactful": 0.32999999999999996,
+        "low_impact": 0.3,
+        "liability": 0.07,
+        "carried": 0.15,
+        "sunk": 0.15,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "platform-core",
+      "window": "2026-03",
+      "n_builds": 17,
+      "radius": 1.0,
+      "f_scaled": [
+        0.33245912795282606,
+        0.7428789069964461,
+        0.5810351605373051
+      ],
+      "cost": 449.21321515754346,
+      "lead_time": 17.843335953921816,
+      "defect_density": 3.0551758026865254,
+      "impact_mix": {
+        "impactful": 0.33999999999999997,
+        "low_impact": 0.3,
+        "liability": 0.060000000000000005,
+        "carried": 0.15,
+        "sunk": 0.15,
+        "unresolved": 0.0
+      }
+    },
+    {
+      "group": "platform-core",
+      "window": "2026-04",
+      "n_builds": 18,
+      "radius": 1.0,
+      "f_scaled": [
+        0.33245912795282606,
+        0.7428789069964461,
+        0.5810351605373051
+      ],
+      "cost": 449.21321515754346,
+      "lead_time": 17.843335953921816,
+      "defect_density": 3.0551758026865254,
+      "impact_mix": {
+        "impactful": 0.35,
+        "low_impact": 0.3,
+        "liability": 0.05,
+        "carried": 0.15,
+        "sunk": 0.15,
+        "unresolved": 0.0
+      }
+    }
+  ],
+  "seed": 20260910,
+  "n_builds": 474
+}

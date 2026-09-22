@@ -1,0 +1,27 @@
+# One JSON object per agent session, for --sessions. Comments and blank lines
+# are skipped. This file is a schema example, not data.
+#
+# Recognised fields:
+#   session_id          required
+#   parent_session_id   null for a root. A run is a maximal tree over this.
+#   cost_usd            preferred effort unit; `tokens` is used if absent
+#   produced_commits    commit count for this session. `commits`/`commit_count`
+#                       also accepted; a truthy produced_pr or produced_branch
+#                       counts as at least one commit
+#   repo                optional, for reading the output
+#
+# OMIT produced_commits rather than writing 0 when you do not know. Zero means
+# "this session committed nothing", which is the finding; missing means "not
+# measured", and the tool reports those separately instead of counting them as
+# invisible effort. Conflating the two manufactures the result.
+#
+# A run whose root investigates and whose children do the work is the shape
+# worth checking: published measurement puts about four fifths of a run's cost
+# outside the root, and most of that in sessions that commit nothing.
+{"session_id": "run-1", "parent_session_id": null, "cost_usd": 19.40, "produced_commits": 0, "repo": "platform"}
+{"session_id": "run-1-a", "parent_session_id": "run-1", "cost_usd": 24.10, "produced_commits": 3, "repo": "platform"}
+{"session_id": "run-1-b", "parent_session_id": "run-1", "cost_usd": 21.80, "produced_commits": 2, "repo": "web"}
+{"session_id": "run-1-c", "parent_session_id": "run-1", "cost_usd": 27.70, "produced_commits": 0, "repo": "platform"}
+{"session_id": "run-2", "parent_session_id": null, "cost_usd": 4.20, "produced_commits": 1, "repo": "web"}
+{"session_id": "run-3", "parent_session_id": null, "cost_usd": 11.60, "produced_commits": 0, "repo": "platform"}
+{"session_id": "run-4", "parent_session_id": null, "cost_usd": 6.75, "repo": "web"}

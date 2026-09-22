@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "decision-surface"
+version = "1.0.0"
+description = "Multi-objective delivery analysis over build records"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+surface = "decision_surface.surface:main"
+decision-surface-mcp = "decision_surface.mcp_server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["decision_surface*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+decision_surface = ["render.mjs"]

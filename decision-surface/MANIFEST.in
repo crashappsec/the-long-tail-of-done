@@ -1,0 +1,6 @@
+include .gitignore
+recursive-include sample *.py *.csv *.json
+recursive-include tests *.py
+recursive-include skill *.md
+prune tests/.fixtures
+global-exclude __pycache__ *.py[cod]

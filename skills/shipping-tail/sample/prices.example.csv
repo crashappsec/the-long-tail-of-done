@@ -1,0 +1,22 @@
+# Blended price per model, in USD per million tokens, for --prices.
+#
+# NO NUMBERS ARE SHIPPED HERE ON PURPOSE. Model prices change often enough
+# that a table baked into a repository is wrong by the time anyone reads it,
+# and a stale price produces a confident total rather than a visible error.
+# Look the current rates up and fill them in yourself.
+#
+# One blended rate per model, not split input/output: the session archive's
+# token mix does not reliably separate the two, so a blended rate that is
+# labelled blended is honest where a split rate derived from a total is not.
+#
+# The model names must match the names in the archive's model_mix exactly.
+# `agentsview stats --json | python3 -c "import json,sys;
+#  print(*json.load(sys.stdin).get('model_mix', {}), sep=chr(10))"` lists them.
+#
+# Any model you leave out is still counted in the token total and excluded
+# from the spend estimate, and the tool reports the share it could price. A
+# priced share below about 90% means the spend figure is not worth quoting.
+model,usd_per_million_tokens
+# claude-opus-5,
+# claude-sonnet-5,
+# claude-haiku-4-5,

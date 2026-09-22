@@ -1,0 +1,9 @@
+name,role,direction,expression,version,notes
+cost,objective,min,mean(cost_usd),2,mean fully-loaded cost per build
+cost_kloc,descriptor,min,sum(cost_usd) / (sum(loc_total) / 1000),1,cost per KLOC changed
+cost_impact,descriptor,min,sum(cost_usd) / count(impact == impactful),1,cost per impactful build -- OVERLAPS the impact mix by construction
+lead_time,objective,min,median(lead_time_days),1,"median first-commit to served/deployed, in days"
+lead_time_p90,descriptor,min,p90(lead_time_days),1,"P90 lead time, drawn as a whisker"
+debt_defect,objective,min,minmax(sum(bugs) / (sum(loc_total) / 1000)),1,"defect density, bugs per KLOC, min-max normalised across cells"
+debt_composite,objective,min,0.5 * minmax(sum(bugs) / (sum(loc_total) / 1000)) + 0.5 * (share(liability) + share(sunk)),1,"weights 0.5/0.5: half defect density, half wasted-build share. OVERLAPS share(liability) and share(sunk)"
+throughput,descriptor,max,count(),1,builds in the cell

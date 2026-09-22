@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+build/
+dist/
+*.egg-info/
+.decision-surface/
+analysis*.json
+surface*.html
+.DS_Store
