@@ -1,4 +1,4 @@
-# shipping-tail
+# the-long-tail-of-done
 
 Skills and tools from **“The Long Tail of ‘Done’”** — tracking what agents
 actually ship, and where it gets deployed. AI Engineer Paris, 24 September 2026.
