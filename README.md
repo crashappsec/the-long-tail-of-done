@@ -3,11 +3,26 @@
 Skills and tools from **“The Long Tail of ‘Done’”** — tracking what agents
 actually ship, and where it gets deployed. AI Engineer Paris, 24 September 2026.
 
+## Downloads
+
+- **Crayon** (Crash Override Endpoint) — session tracking, process-tree and
+  network visibility, insights and guardrails on the developer machine.
+  **[Download](https://crashoverride.com/download/endpoint?utm_source=presentation&utm_medium=slides&utm_campaign=q3_events_2026)**
+- **Chalk** — open-source artifact marking, build attestation and runtime
+  heartbeats; joins workload → artifact → build → commit → session.
+  **[Releases](https://github.com/crashappsec/chalk/releases)** ·
+  [github.com/crashappsec/chalk](https://github.com/crashappsec/chalk) ·
+  [docs](https://crashoverride.com/docs/chalk/quick-start)
+
+The tools in this repo close the session-to-commit edge and, given deploy or
+flag events, the deploy-to-`t=0` edge. The commit → artifact → deploy edges
+need provenance recorded in the artifact itself — that's Crayon and Chalk.
+
+## What's inside
+
 Commit counts, merged PRs and token spend measure work at the point it leaves
 a developer. Nothing here takes those at face value: these tools measure what
 happened to the work *after* it shipped.
-
-## What's inside
 
 | Path | What it is |
 |---|---|
@@ -36,22 +51,3 @@ python3 -m venv .venv && .venv/bin/python -m pip install .
 
 See [`decision-surface/README.md`](decision-surface/README.md) for the MCP
 server and agent-skill setup.
-
-## The rest of the chain
-
-These tools close the session-to-commit edge and, given deploy or flag events,
-the deploy-to-`t=0` edge. The commit → artifact → deploy edges need provenance
-recorded in the artifact itself:
-
-- **Crayon** (Crash Override Endpoint) — session tracking, process-tree and
-  network visibility, insights and guardrails on the developer machine.
-  [Download](https://crashoverride.com/download/endpoint?utm_source=presentation&utm_medium=slides&utm_campaign=q3_events_2026)
-- **Chalk** — open-source artifact marking, build attestation and runtime
-  heartbeats; joins workload → artifact → build → commit → session.
-  [github.com/crashappsec/chalk](https://github.com/crashappsec/chalk) ·
-  [releases](https://github.com/crashappsec/chalk/releases) ·
-  [docs](https://crashoverride.com/docs/chalk/quick-start)
-
-## License
-
-[GPL-3.0](LICENSE), matching the rest of Crash Override's open source.
