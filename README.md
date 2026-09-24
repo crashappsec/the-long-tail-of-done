@@ -3,6 +3,8 @@
 Skills and tools from **“The Long Tail of ‘Done’”** — tracking what agents
 actually ship, and where it gets deployed. AI Engineer Paris, 24 September 2026.
 
+<h1 align="center"><a href="the-long-tail-of-done.pdf">📑 See the slides here</a></h1>
+
 ## Downloads
 
 - **Crayon** (Crash Override Endpoint) — session tracking, process-tree and
